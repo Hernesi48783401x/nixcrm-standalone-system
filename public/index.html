@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIXCRM License Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+        
+        .version {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            color: #06b6d4;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(6, 182, 212, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #06b6d4;
+        }
+        
+        .card p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card li {
+            padding: 0.5rem 0;
+            color: #cbd5e1;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+        
+        .btn-admin {
+            background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
+        }
+        
+        .btn-reseller {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .feature {
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #06b6d4;
+        }
+        
+        .feature p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #64748b;
+            margin-top: auto;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>NIXCRM License Manager</h1>
+            <p class="subtitle">Sistema de Gestión de Licencias Profesional</p>
+            <span class="version">v11.0 Standalone</span>
+        </header>
+        
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h2>Administrador</h2>
+                <p>Acceso completo al sistema de gestión</p>
+                <ul>
+                    <li>Crear y gestionar revendedores</li>
+                    <li>Asignar cuotas y restricciones</li>
+                    <li>Auditoría completa de licencias</li>
+                    <li>Estadísticas en tiempo real</li>
+                </ul>
+                <a href="/admin.html" class="btn btn-admin">Acceder como Admin →</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">🔑</div>
+                <h2>Revendedor</h2>
+                <p>Portal de generación de licencias</p>
+                <ul>
+                    <li>Generar licencias para clientes</li>
+                    <li>Control de cuota asignada</li>
+                    <li>Historial de licencias generadas</li>
+                    <li>Descarga inmediata de archivos .lic</li>
+                </ul>
+                <a href="/reseller.html" class="btn btn-reseller">Acceder como Revendedor →</a>
+            </div>
+        </div>
+        
+        <h2 style="text-align: center; margin: 3rem 0 2rem 0; color: #06b6d4;">Características de Seguridad</h2>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Hardware ID Binding</h3>
+                <p>Cada licencia está vinculada a un hardware específico, imposible de compartir</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">👥</div>
+                <h3>Control de Cuotas</h3>
+                <p>Sistema automático de control de límites por revendedor</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🔐</div>
+                <h3>Encriptación HMAC</h3>
+                <p>Protección criptográfica contra manipulación de licencias</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>NIXCRM License Manager v11.0 - Sistema de Gestión Profesional</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Standalone Edition - Completamente Independiente</p>
+    </footer>
+</body>
+</html>
